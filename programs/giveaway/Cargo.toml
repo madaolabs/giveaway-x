@@ -1,0 +1,18 @@
+[package]
+name = "giveaway"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "giveaway"
+
+[dependencies]
+hex = "0.4.3"
+put-anchor-lang = { version = "0.1.0", path = "/Users/tuotu/frontend/put/put-anchor/lang", features = [
+    "init-if-needed",
+] }
+put-anchor-ppl = { version = "0.1.0", path = "/Users/tuotu/frontend/put/put-anchor/ppl" }
+sha3 = "0.10.8"

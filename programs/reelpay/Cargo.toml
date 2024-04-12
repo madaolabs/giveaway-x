@@ -1,0 +1,24 @@
+[package]
+name = "reelpay"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "reelpay"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[profile.release]
+overflow-checks = true
+
+[dependencies]
+hex = "0.4.3"
+put-anchor-lang = {version = "0.1.0", path="/Users/tuotu/frontend/put/put-anchor/lang", features = ["init-if-needed"]}
+put-anchor-ppl = {version = "0.1.0", path="/Users/tuotu/frontend/put/put-anchor/ppl"}

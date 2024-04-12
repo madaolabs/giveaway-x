@@ -1,0 +1,17 @@
+[workspace.package]
+name = "put-dapp-program"
+version = "0.1.0"
+edition = "2021"
+
+
+[workspace]
+members = [
+    "programs/*"
+]
+resolver = "2"
+
+
+
+[workspace.dependencies]
+put-anchor-lang = {version = "0.1.0", path="/Users/tuotu/frontend/put/put-anchor/lang", features = ["init-if-needed"]}
+put-anchor-ppl = {version = "0.1.0", path="/Users/tuotu/frontend/put/put-anchor/ppl"}

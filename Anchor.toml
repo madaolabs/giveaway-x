@@ -1,0 +1,31 @@
+[features]
+seeds = true
+
+[programs.localnet]
+reelpay = "FvLMWKzRA2if2aJpFd4jFG9qQZhmzWjLAf5sPCQ1Xvsh"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "https://rpc-test.put.com"
+wallet = "~/.config/put/id.json"
+
+[workspace]
+# members = ["programs/reelpay", "programs/wallet", "programs/giveaway"]
+members = ["programs/giveaway"]
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+testRInit = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 -g 'initialize' tests/reelpay.ts"
+testRClose = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 -g 'close' tests/reelpay.ts"
+testRPay = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 -g 'pay' tests/reelpay.ts"
+testRChangeAdmin = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 -g 'changeAdmin' tests/reelpay.ts"
+testRWithdraw = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 -g 'withdraw' tests/reelpay.ts"
+testRCreatePool = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 -g 'createPool' tests/reelpay.ts"
+
+# giveaway
+testCreatePutGiveaway = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 -g 'createPutGiveaway' tests/giveaway.ts"
+testReceivePutGiveaway = "yarn run ts-mocha -t 1000000 -g 'receivePutGiveaway' tests/giveaway.ts"
+testCreateNonPutGiveaway = "yarn run ts-mocha -t 1000000 -g 'createNonPutGiveaway' tests/giveaway.ts"
+testReceiveNonPutGiveaway = "yarn run ts-mocha -t 1000000 -g 'receiveNonPutGiveaway' tests/giveaway.ts"
